@@ -114,10 +114,6 @@
 #define IR_FAN_POWER (0xFC03FC03)
 #define IR_FAN_TIME (0xF40BF40B)
 #define IR_FAN_ROTATION (0xEC13EC13)
-// Sometimes it doesn't work??? (TODO: Fill in new values)
-#define IR_FAN_POWER_2 (0xFC03FC03)
-#define IR_FAN_TIME_2 (0xF40BF40B)
-#define IR_FAN_ROTATION_2 (0xEC13EC13)
 
 String currTemp = "??.?" + degreeSym + "C";
 String minTemp = "??.?" + degreeSym + "C";
@@ -239,13 +235,11 @@ void readIRRcv(){
       case IR_M:
       case IR_P:
       case IR_FAN_POWER:
-      //case IR_FAN_POWER_2:
         Serial.println("IR: toggling display!");
         toggleDisp();
         break;
       case IR_EQ:
       case IR_FAN_TIME:
-      //case IR_FAN_TIME_2:
         Serial.println("IR: resetting temperature statistics!");
         resetStats();
         break;
@@ -262,7 +256,6 @@ void readIRRcv(){
       case IR_8:
       case IR_9:
       case IR_FAN_ROTATION:
-      //case IR_FAN_ROTATION_2:
         Serial.println("IR: toggling display mode!");
         toggleDispMode();
         break;
