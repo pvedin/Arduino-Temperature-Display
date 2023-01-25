@@ -60,7 +60,7 @@
 #define analogTemp_Pin (A0)
 #define PIR_Pin (15) // Passive Infrared Reciever (Heat/Animal detection)
 #define Buzzer_Pin (14)
-#define DS18S20_Pin (12)//DS18S20 (digital temp sensor)
+#define DS18B20_Pin (12)//DS18B20 (digital temp sensor)
 #define IR_RCV_Pin (11) 
 #define dispMode_Pin (10) // Button used to switch between displaying inside and outside temperatures
 #define dispToggle_Pin (9) // Button used to turn on/off the display
@@ -148,7 +148,7 @@ unsigned int tempIndex = 0;
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(lcd_rs_Pin, lcd_enable_Pin, lcd_d4_Pin, lcd_d5_Pin, lcd_d6_Pin, lcd_d7_Pin);
-OneWire ds(DS18S20_Pin);  // on digital pin 2
+OneWire ds(DS18B20_Pin);
 
 
 void setup(void) {
@@ -339,7 +339,7 @@ void readBtn(int pin, bool* startRead, bool* lockInput, unsigned long* lastRead,
 
 
 byte getTemps(byte validTemps) {
-    //returns the temperature from one DS18S20 in DEG Celsius
+    //returns the temperature from one DS18B20 in DEG Celsius
     static unsigned long oldTime = 0;
 
     if (time - oldTime <= tempDelay) {
