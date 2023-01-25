@@ -8,7 +8,7 @@
   - 8 bits allow for more samples (3600/h as opposed to 1500/h for 16 bits), but at a more constrained temperature range (7.0-32.5 C)
 - Motion sensor that triggers a buzzer
   - The buzzer only reacts to signals from the sensor that last longer than 100 ms
-  - The buzzer emits one-second signals in three-second intervals while active
+  - The buzzer emits one-second tones in three-second intervals while active
 
 # Components
 - 1x Arduino MEGA 2560
