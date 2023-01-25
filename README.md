@@ -12,7 +12,7 @@
 
 # Components
 - 1x Arduino MEGA 2560
-- 1x LED Display
+- 1x LCD Display
 - 1x potentiometer
 - 2x buttons
 - 1x IR receiver
